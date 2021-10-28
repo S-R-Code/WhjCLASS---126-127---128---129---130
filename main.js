@@ -13,9 +13,10 @@ function setup() {
     video = createCapture(VIDEO);
     video.hide();
 
-    poseNet.on('pose' , gotPoses );
+    
 
     poseNet = ml5.poseNet(video, modelLoaded);
+    poseNet.on ('pose' , gotPoses );
 
 }
 
@@ -51,7 +52,7 @@ function gotPoses(results){
 
         rightWristY = results[0].pose.rightWrist.y;
         
-        console.log( "rightWristX =" + rightWristX ,   " + rightWristY" = rightWristY);
+        console.log( "rightWristX =" + rightWristX ,   "  rightWristY =" + rightWristY);
     }
 
 }
